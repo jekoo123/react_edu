@@ -15,4 +15,4 @@ export const StyledButton = styled.div`
   &:hover {
     background-color: blue;
   }
-`;
+`

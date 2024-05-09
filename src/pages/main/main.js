@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, StyledButton } from "./styled";
+
+import { Navigate, useNavigate } from "react-router-dom";
 import { Card } from "../../components/card/card";
 import axios from "axios";
 
@@ -30,6 +32,8 @@ export const Main = () => {
   const [number, setNumber] = useState(1);
   const [pokemonImg, setPokemonImg] = useState("");
   const [pokemonName, setPokemonName] = useState("");
+
+  const navigate = useNavigate();
 
   let valueNumber = 0;
 
@@ -78,6 +82,9 @@ export const Main = () => {
           const temp = e.name + "love";
           return <Card key={i} props={temp} />;
         })}
+        <div 
+          style={{backgroundColor: "#c9c9c9"}}
+        onClick={() => navigate("/sign-in", { state: { pokemonName } })}>routing move</div>
       </Container>
     </>
   );

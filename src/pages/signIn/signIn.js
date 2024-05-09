@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "./styled";
+import { useLocation } from "react-router-dom";
 
 export const SignIn = () => {
   const [pokemonName, setPokemonName] = useState("");
-
-  useEffect(() => {
-    const pokemon = localStorage.getItem("pokemonName");
-    if (pokemon) {
-      setPokemonName(pokemon);
-    } else {
-      console.log("error");
-    }
-  }, []);
+  const location = useLocation();
+  // useEffect(() => {
+  //   const pokemon = localStorage.getItem("pokemonName");
+  //   if (pokemon) {
+  //     setPokemonName(pokemon);
+  //   } else {
+  //     console.log("error");
+  //   }
+  // }, []);
 
   return (
     <Container>
-      <div>{pokemonName}</div>
+      <div>{location.state.pokemonName}</div>
     </Container>
   );
 };
