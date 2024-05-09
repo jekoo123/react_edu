@@ -50,7 +50,6 @@ export const Main = () => {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon-form/${number}`
       );
-
       setPokemonImg(response.data.sprites.front_default);
     } catch (e) {
       console.log(e);
@@ -62,6 +61,8 @@ export const Main = () => {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${number}`
       );
+      localStorage.setItem("pokemonName", response.data.forms[0].name);
+
       setPokemonName(response.data.forms[0].name);
     } catch (e) {
       console.log(e);
@@ -75,7 +76,6 @@ export const Main = () => {
         <img src={pokemonImg} alt="" />
         {exampleStudent.map((e, i) => {
           const temp = e.name + "love";
-
           return <Card key={i} props={temp} />;
         })}
       </Container>
