@@ -82,9 +82,12 @@ export const Main = () => {
           const temp = e.name + "love";
           return <Card key={i} props={temp} />;
         })}
-        <div 
-          style={{backgroundColor: "#c9c9c9"}}
-        onClick={() => navigate("/sign-in", { state: { pokemonName } })}>routing move</div>
+        <div
+          style={{ backgroundColor: "#c9c9c9" }}
+          onClick={() => navigate("/sign-in", { state: { pokemonName } })}
+        >
+          routing move
+        </div>
       </Container>
     </>
   );

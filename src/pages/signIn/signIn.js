@@ -3,16 +3,15 @@ import { Container } from "./styled";
 import { useLocation } from "react-router-dom";
 
 export const SignIn = () => {
-  const [pokemonName, setPokemonName] = useState("");
   const location = useLocation();
-  // useEffect(() => {
-  //   const pokemon = localStorage.getItem("pokemonName");
-  //   if (pokemon) {
-  //     setPokemonName(pokemon);
-  //   } else {
-  //     console.log("error");
-  //   }
-  // }, []);
+  useEffect(() => {
+    const pokemon = localStorage.getItem("pokemonName");
+    if (pokemon) {
+      setPokemonName(pokemon);
+    } else {
+      console.log("error");
+    }
+  }, []);
 
   return (
     <Container>
